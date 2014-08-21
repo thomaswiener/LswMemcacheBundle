@@ -1,5 +1,5 @@
 {
-    "name": "leaseweb/memcache-bundle",
+    "name": "rocket/memcache-bundle",
     "type": "symfony-bundle",
     "description": "Memcache Doctrine caching and session storage in the Web Debug Toolbar",
     "keywords": ["memcache","memcached","cache","session"],
@@ -20,7 +20,6 @@
     "autoload": {
         "psr-0": { "Lsw\\MemcacheBundle": "" }
     },
-    "target-dir": "Lsw/MemcacheBundle",
     "extra": {
         "branch-alias": {
             "dev-master": "1.1.x-dev"
