@@ -248,21 +248,21 @@ if ($extension->getVersion()=='1.0.2') {
             return $result;
         }
         public function delete( $key, $time = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::delete', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::delete', func_get_args());
             $start = microtime(true);
             $name = 'delete';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteByKey( $server_key, $key, $time = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteByKey', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteByKey', func_get_args());
             $start = microtime(true);
             $name = 'deleteByKey';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
@@ -654,41 +654,41 @@ if ($extension->getVersion()=='1.0.2') {
             return $result;
         }
         public function delete( $key, $time = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::delete', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::delete', func_get_args());
             $start = microtime(true);
             $name = 'delete';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteByKey( $server_key, $key, $time = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteByKey', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteByKey', func_get_args());
             $start = microtime(true);
             $name = 'deleteByKey';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteMulti( $keys, $expiration = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteMulti', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteMulti', func_get_args());
             $start = microtime(true);
             $name = 'deleteMulti';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteMultiByKey( $server_key, $keys, $expiration = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteMultiByKey', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteMultiByKey', func_get_args());
             $start = microtime(true);
             $name = 'deleteMultiByKey';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
@@ -1140,41 +1140,41 @@ if ($extension->getVersion()=='1.0.2') {
             return $result;
         }
         public function delete( $key, $time = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::delete', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::delete', func_get_args());
             $start = microtime(true);
             $name = 'delete';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteByKey( $server_key, $key, $time = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteByKey', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteByKey', func_get_args());
             $start = microtime(true);
             $name = 'deleteByKey';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteMulti( $keys, $expiration = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteMulti', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteMulti', func_get_args());
             $start = microtime(true);
             $name = 'deleteMulti';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteMultiByKey( $server_key, $keys, $expiration = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteMultiByKey', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteMultiByKey', func_get_args());
             $start = microtime(true);
             $name = 'deleteMultiByKey';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
@@ -1626,41 +1626,41 @@ if ($extension->getVersion()=='1.0.2') {
             return $result;
         }
         public function delete( $key, $time = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::delete', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::delete', func_get_args());
             $start = microtime(true);
             $name = 'delete';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteByKey( $server_key, $key, $time = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteByKey', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteByKey', func_get_args());
             $start = microtime(true);
             $name = 'deleteByKey';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteMulti( $keys, $expiration = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteMulti', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteMulti', func_get_args());
             $start = microtime(true);
             $name = 'deleteMulti';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
         }
         public function deleteMultiByKey( $server_key, $keys, $expiration = 0 ) {
-            if (!$this->logging) return forward_static_call_array('parent::deleteMultiByKey', func_get_args());
+            if (!$this->logging) return @forward_static_call_array('parent::deleteMultiByKey', func_get_args());
             $start = microtime(true);
             $name = 'deleteMultiByKey';
             $arguments = func_get_args();
-            $result = forward_static_call_array("parent::$name", $arguments);
+            $result = @forward_static_call_array("parent::$name", $arguments);
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
