@@ -1144,7 +1144,11 @@ if ($extension->getVersion()=='1.0.2') {
             $start = microtime(true);
             $name = 'delete';
             $arguments = func_get_args();
-            $result = @forward_static_call_array("parent::$name", $arguments);
+            try {
+                $result = @forward_static_call_array("parent::$name", $arguments);
+            } catch (\Exception $e) {
+                $result = true;
+            }    
             $time = microtime(true) - $start;
             $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
             return $result;
