@@ -8,6 +8,24 @@ class AntiDogPileMemcache extends LoggingMemcache
 {
     const MAX_TTL = 2592000;
 
+    private $calls;
+    private $initialize;
+    private $logging;
+
+    public function __construct($logging, $persistentId = '') {
+        $this->calls = array();
+        $this->logging = $logging;
+        if ($persistentId) {
+            $this->initialize = count($this->getServerList())==0;
+        } else {
+            $this->initialize = true;
+        }
+        $arguments = func_get_args();
+        array_shift($arguments);
+        forward_static_call_array("parent::__construct", $arguments);
+    }
+
+
     /**
      * Function to get value by key using Anti-Dog-Pile algorithm.
      * NB: On every invalidation only one call will return false,
