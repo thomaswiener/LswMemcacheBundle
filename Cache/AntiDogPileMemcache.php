@@ -64,4 +64,19 @@ class AntiDogPileMemcache extends LoggingMemcache
         return $result;
     }
 
+    public function delete( $key, $time = 0 ) {
+        if (!$this->logging) return forward_static_call_array('parent::delete', func_get_args());
+        $start = microtime(true);
+        $name = 'delete';
+        $arguments = func_get_args();
+        try {
+            $result = forward_static_call_array("parent::$name", $arguments);
+        } catch (\Exception $e) {
+            $result = true;
+        }  
+        $time = microtime(true) - $start;
+        $this->calls[] = (object) compact('start', 'time', 'name', 'arguments', 'result');
+        return $result;
+    }
+
 }
